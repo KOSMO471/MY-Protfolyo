@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mehmet Fatih - Kişisel Portfolyo & CV</title>
+    <!-- Font Awesome İkonları -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-main: #222831;
+            --bg-card: #393E46;
+            --accent: #FFD369;
+            --text-light: #EEEEEE;
+            --text-muted: #9CA3AF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Sticky Navigation Bar */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(34, 40, 49, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 211, 105, 0.2);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: monospace;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+            background-color: rgba(255, 211, 105, 0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1000px;
+            margin: 4rem auto 2rem auto;
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background-color: rgba(255, 211, 105, 0.1);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 2.5rem auto;
+        }
+
+        /* Manifesto Card */
+        .manifesto-card {
+            background-color: var(--bg-card);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem 2rem;
+            border-radius: 0 12px 12px 0;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        .manifesto-card i.quote-icon {
+            position: absolute;
+            right: 1.5rem;
+            top: 1rem;
+            font-size: 2.5rem;
+            color: rgba(255, 211, 105, 0.15);
+        }
+
+        .manifesto-title {
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .manifesto-quote {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        /* Container Layout */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.8rem;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .section-header .line {
+            flex-grow: 1;
+            height: 1px;
+            background-color: rgba(255, 211, 105, 0.2);
+        }
+
+        /* Hakkımda & Eğitim Grid */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            padding: 1.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(255, 211, 105, 0.3);
+        }
+
+        .card h3 {
+            color: var(--text-light);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .card h3 i {
+            color: var(--accent);
+        }
+
+        .education-list {
+            list-style: none;
+        }
+
+        .education-item {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .education-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .education-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.6rem;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--accent);
+        }
+
+        .education-title {
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        .education-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Timeline Section */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px solid rgba(255, 211, 105, 0.2);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -2.6rem;
+            top: 0.2rem;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: var(--bg-main);
+            border: 3px solid var(--accent);
+        }
+
+        .timeline-date {
+            font-family: monospace;
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-content {
+            background-color: var(--bg-card);
+            padding: 1.2rem 1.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .timeline-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Projeler Bölümü (Yeni Eklendi) */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .project-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(255, 211, 105, 0.4);
+        }
+
+        .project-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .project-header i {
+            font-size: 1.8rem;
+            color: var(--accent);
+        }
+
+        .project-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1.2rem;
+            line-height: 1.5;
+        }
+
+        .btn-project {
+            background-color: rgba(255, 211, 105, 0.1);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-project:hover {
+            background-color: var(--accent);
+            color: var(--bg-main);
+        }
+
+        /* Tech Stack & Araç Seti Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            padding: 1.4rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            gap: 1.2rem;
+            align-items: flex-start;
+        }
+
+        .skill-icon {
+            background-color: var(--bg-main);
+            color: var(--accent);
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            border: 1px solid rgba(255, 211, 105, 0.2);
+        }
+
+        .skill-info h4 {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-badge {
+            font-size: 0.7rem;
+            background-color: rgba(255, 211, 105, 0.15);
+            color: var(--accent);
+            padding: 0.1rem 0.5rem;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+
+        .skill-info p {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            line-height: 1.4;
+        }
+
+        /* Sertifikalar Grid & Visual Image Styling */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cert-card {
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            border-top: 3px solid var(--accent);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .cert-img-box {
+            width: 100%;
+            height: 180px;
+            background-color: var(--bg-main);
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .cert-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .cert-img-box:hover img {
+            transform: scale(1.06);
+        }
+
+        .cert-img-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(34, 40, 49, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            color: var(--accent);
+            font-size: 1.8rem;
+        }
+
+        .cert-img-box:hover .cert-img-overlay {
+            opacity: 1;
+        }
+
+        .cert-body {
+            padding: 1.2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            flex-grow: 1;
+        }
+
+        .cert-header {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .cert-header i {
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+
+        .cert-title {
+            font-weight: 600;
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        .cert-issuer {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .btn-cert-view {
+            background-color: rgba(255, 211, 105, 0.1);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s ease;
+            margin-top: auto;
+            width: 100%;
+        }
+
+        .btn-cert-view:hover {
+            background-color: var(--accent);
+            color: var(--bg-main);
+        }
+
+        /* Modal (Büyük Resim Açılır Penceresi) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.85);
+            backdrop-filter: blur(6px);
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        .modal-img {
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: 8px;
+            border: 2px solid var(--accent);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.7);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            color: var(--text-light);
+            font-size: 2.2rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: var(--accent);
+        }
+
+        /* Referanslar & Eğitmen Görüşleri */
+        .ref-filter {
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            scrollbar-width: thin;
+        }
+
+        .ref-filter-btn {
+            background-color: var(--bg-card);
+            color: var(--text-muted);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+
+        .ref-filter-btn.active, .ref-filter-btn:hover {
+            background-color: var(--accent);
+            color: var(--bg-main);
+            font-weight: 600;
+            border-color: var(--accent);
+        }
+
+        .reviews-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-height: 480px;
+            overflow-y: auto;
+            padding-right: 0.5rem;
+        }
+
+        .reviews-container::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .reviews-container::-webkit-scrollbar-thumb {
+            background-color: var(--bg-card);
+            border-radius: 3px;
+        }
+
+        .review-card {
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            padding: 1.2rem 1.5rem;
+            border-left: 3px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.6rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .instructor-info {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .instructor-name {
+            font-weight: 600;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .course-tag {
+            background-color: var(--bg-main);
+            color: var(--accent);
+            font-size: 0.75rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+
+        .review-date {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .review-text {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            opacity: 0.9;
+        }
+
+        /* GitHub Callout & Contact */
+        .github-box {
+            background: linear-gradient(135deg, var(--bg-card) 0%, rgba(57, 62, 70, 0.6) 100%);
+            border: 1px solid var(--accent);
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .github-box h3 {
+            font-size: 1.6rem;
+            color: var(--text-light);
+            margin-bottom: 0.8rem;
+        }
+
+        .github-box p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 1.5rem auto;
+            font-size: 1rem;
+        }
+
+        .btn-github {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background-color: var(--accent);
+            color: var(--bg-main);
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 211, 105, 0.2);
+        }
+
+        .btn-github:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 211, 105, 0.4);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-card {
+            background-color: var(--bg-card);
+            padding: 1.2rem 1.5rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: var(--text-light);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .contact-card i {
+            font-size: 1.8rem;
+            color: var(--accent);
+        }
+
+        .contact-card-info div {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .contact-card-info strong {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .closing-note {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: rgba(255, 211, 105, 0.05);
+            border-radius: 8px;
+            color: var(--accent);
+            font-weight: 500;
+            border: 1px dashed rgba(255, 211, 105, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 1rem;
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            nav {
+                gap: 0.5rem;
+                font-size: 0.85rem;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .manifesto-card {
+                padding: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Navigation -->
+    <header>
+        <a href="#" class="logo">
+            <i class="fa-solid fa-code"></i> Mehmet Fatih
+        </a>
+        <nav>
+            <a href="#about">Hakkımda</a>
+            <a href="#timeline">Süreç</a>
+            <a href="#projects">Projeler</a>
+            <a href="#skills">Yetenekler</a>
+            <a href="#certifications">Sertifikalar</a>
+            <a href="#references">Referanslar</a>
+            <a href="#contact">İletişim</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <span class="hero-badge"><i class="fa-solid fa-microchip"></i> YAZILIM & ALGORİTMA GELİŞTİRİCİ</span>
+        <h1>Merhaba, Ben <span>Mehmet Fatih</span></h1>
+        <p class="hero-subtitle">Masaüstü uygulamalarından oyun kurgusuna, algoritma tasarımından otomasyon projelerine kadar yazılımın mantık dünyasına odaklanıyorum.</p>
+        
+        <!-- Manifesto Card -->
+        <div class="manifesto-card">
+            <i class="fa-solid fa-quote-right quote-icon"></i>
+            <div class="manifesto-title">// Çalışma Felsefem</div>
+            <div class="manifesto-quote">"Bir şeyleri kodlamaktan ziyade o şeyi nasıl kodlayacağımı düşünmeyi seviyorum."</div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- Hakkımda ve Eğitim -->
+        <section id="about">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-user"></i> Hakkımda & Eğitim</h2>
+                <div class="line"></div>
+            </div>
+
+            <div class="about-grid">
+                <!-- Profil Özet -->
+                <div class="card">
+                    <h3><i class="fa-solid fa-brain"></i> Yaklaşımım & Profil</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">
+                        Yazılım geliştirme sürecini sadece kod yazmaktan ibaret görmüyorum. Önceliğim, sistemlerin mantıksal altyapısını kurmak, algoritmik problemleri kağıt üzerinde ve zihnimde çözüme kavuşturup ardından koda dönüştürmektir.
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">
+                        Eğitmenlerimden aldığım geri bildirimler doğrultusunda algoritmik düşünme becerimi sürekli diri tutuyor ve yapay zeka destekli yeni nesil geliştirme metodolojilerini aktif olarak öğreniyorum.
+                    </p>
+                </div>
+
+                <!-- Eğitim Geçmişi -->
+                <div class="card">
+                    <h3><i class="fa-solid fa-graduation-cap"></i> Eğitim Geçmişi</h3>
+                    <ul class="education-list">
+                        <li class="education-item">
+                            <div class="education-title">Prof. Dr. Raşit Küçük Anadolu İmam Hatip Lisesi</div>
+                            <div class="education-desc">Lise Öğrenimi (Devam Ediyor)</div>
+                        </li>
+                        <li class="education-item">
+                            <div class="education-title">Nebi Güney İmam Hatip Ortaokulu</div>
+                            <div class="education-desc">Ortaokul Mezuniyeti</div>
+                        </li>
+                        <li class="education-item">
+                            <div class="education-title">Kepez İlkokulu</div>
+                            <div class="education-desc">İlkokul Mezuniyeti</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Süreç Çizelgesi (Timeline) -->
+        <section id="timeline">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-timeline"></i> Gelişim Zaman Çizelgesi</h2>
+                <div class="line"></div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2020</div>
+                    <div class="timeline-content">
+                        <p>Teknolojiye ve yazılıma olan yoğun merakın başlaması. Yapmak istediğim uygulamaların ve oyunların fikirlerini/mantık taslaklarını defter üzerinde kurgulama dönemi.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2022</div>
+                    <div class="timeline-content">
+                        <p><strong>Nova IT Academy</strong> bünyesinde kodlama dünyasına ilk resmi adım. Yazılım temelini ve kodlama disiplinini profesyonel bir ortamda öğrenme süreci.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2024</div>
+                    <div class="timeline-content">
+                        <p>Mantık taslaklarından doğrudan yazılı koda geçiş. İlk kez doğrudan Python, C# ve HTML/JS ile bizzat kod yazarak proje üretme aşaması.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2025 - 2026</div>
+                    <div class="timeline-content">
+                        <p>Yapay zeka araçlarının desteğiyle yeni yazılımlar, modern kütüphaneler ve ileri düzey geliştirme pratikleri kazanarak kendimi çok yönlü geliştirme dönemi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Öne Çıkan Projeler (Yeni Eklenen Bölüm) -->
+        <section id="projects">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-laptop-code"></i> Öne Çıkan Projelerim</h2>
+                <div class="line"></div>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Proje 1 -->
+                <div class="project-card">
+                    <div>
+                        <div class="project-header">
+                            <i class="fa-solid fa-earth-americas"></i>
+                            <span class="skill-badge">GitHub Repo</span>
+                        </div>
+                        <div class="project-title">Geopolitica</div>
+                        <div class="project-desc">🌍 Dinamik ekonomi, iklim krizleri, casusluk ve küresel jeopolitika unsurlarını barındıran; web tabanlı, gerçek zamanlı bir büyük strateji (RTS) oyunu. HTML5 Canvas ve modern JavaScript kullanılarak geliştirilmiştir.</div>
+                    </div>
+                    <a href="https://github.com/KOSMO471/Geopolitica" target="_blank" class="btn-project">
+                        <i class="fa-brands fa-github"></i> Projeyi İncele
+                    </a>
+                </div>
+
+                <!-- Proje 2 -->
+                <div class="project-card">
+                    <div>
+                        <div class="project-header">
+                            <i class="fa-solid fa-circle-question"></i>
+                            <span class="skill-badge">GitHub Repo</span>
+                        </div>
+                        <div class="project-title">Kim Milyoner Olmak İster</div>
+                        <div class="project-desc">Popüler yarışma programının mantığını, soru akış mekanizmalarını ve puanlama sistemini simüle eden eğlenceli kodlama projesi.</div>
+                    </div>
+                    <a href="https://github.com/KOSMO471/Kim-Milyoner-Olmak-ster" target="_blank" class="btn-project">
+                        <i class="fa-brands fa-github"></i> Projeyi İncele
+                    </a>
+                </div>
+
+                <!-- Proje 3 -->
+                <div class="project-card">
+                    <div>
+                        <div class="project-header">
+                            <i class="fa-solid fa-microchip"></i>
+                            <span class="skill-badge">GitHub Repo</span>
+                        </div>
+                        <div class="project-title">Arduino Projeleri</div>
+                        <div class="project-desc">Donanım ve yazılım entegrasyonunu birleştiren, sensörler ve devre elemanlarıyla kontrol edilen fiziksel kodlama çalışmaları.</div>
+                    </div>
+                    <a href="https://github.com/KOSMO471/ardunio" target="_blank" class="btn-project">
+                        <i class="fa-brands fa-github"></i> Projeyi İncele
+                    </a>
+                </div>
+
+                <!-- Proje 4 -->
+                <div class="project-card">
+                    <div>
+                        <div class="project-header">
+                            <i class="fa-solid fa-sliders"></i>
+                            <span class="skill-badge">GitHub Repo</span>
+                        </div>
+                        <div class="project-title">Control Center</div>
+                        <div class="project-desc">CPU/RAM/GPU takibi, dosya gezgini, terminal, pomodoro ve eğlenceli başarım sistemine sahip WPF tabanlı Windows kontrol merkezi.</div>
+                    </div>
+                    <a href="https://github.com/KOSMO471/ControlCenter" target="_blank" class="btn-project">
+                        <i class="fa-brands fa-github"></i> Projeyi İncele
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack & Araç Kullanım Amaçları -->
+        <section id="skills">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-layer-group"></i> Yetenekler & Araç Seti</h2>
+                <div class="line"></div>
+            </div>
+
+            <div class="skills-grid">
+                <!-- Python -->
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fa-brands fa-python"></i></div>
+                    <div class="skill-info">
+                        <h4>Python <span class="skill-badge">Dil</span></h4>
+                        <p>Genellikle bilgisayardaki veri düzenlemeleri ve küçük çaplı otomasyon projelerini hızlıca hayata geçirmek için kullanıyorum.</p>
+                    </div>
+                </div>
+
+                <!-- C# -->
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
+                    <div class="skill-info">
+                        <h4>C# <span class="skill-badge">Dil</span></h4>
+                        <p>Unity oyun motoru üzerinden oyun mantıklarını kodlamak ve bazı masaüstü uygulama projelerini kurgulamak için aktif olarak kullanıyorum.</p>
+                    </div>
+                </div>
+
+                <!-- JavaScript & HTML5 -->
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fa-brands fa-js"></i></div>
+                    <div class="skill-info">
+                        <h4>JavaScript & HTML5 <span class="skill-badge">Web</span></h4>
+                        <p>Özellikle arkadaşlarımın da rahatça erişip deneyimleyebileceği interaktif web projeleri ve araçlar kurgulamak için tercih ediyorum.</p>
+                    </div>
+                </div>
+
+                <!-- Construct 3 -->
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fa-solid fa-gamepad"></i></div>
+                    <div class="skill-info">
+                        <h4>Construct 3 <span class="skill-badge">Oyun Motoru</span></h4>
+                        <p>Oyun mekaniklerini kurgulamada ve hızlı mantık prototipleri oluşturmada geçmiş dönemlerde yoğun olarak kullandığım araç.</p>
+                    </div>
+                </div>
+
+                <!-- Tinkercad -->
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fa-solid fa-cube"></i></div>
+                    <div class="skill-info">
+                        <h4>Tinkercad <span class="skill-badge">3D Tasarım</span></h4>
+                        <p>Temel 3D modelleme projeleri, fiziksel tasarım taslakları ve spatial mantık geliştirmek için yararlanıyorum.</p>
+                    </div>
+                </div>
+
+                <!-- Canva & DaVinci Resolve -->
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fa-solid fa-film"></i></div>
+                    <div class="skill-info">
+                        <h4>Canva & DaVinci Resolve <span class="skill-badge">Medya</span></h4>
+                        <p>Görsel tasarım ve video kurgu süreçlerinde aktifim. Canva üzerinde <strong>150+ Proje Rozeti</strong> ile onaylanmış yüksek üretim tecrübesi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sertifikalar & Başarılar (Görsel Kart Yapısı) -->
+        <section id="certifications">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-award"></i> Sertifikalar & Başarılar</h2>
+                <div class="line"></div>
+            </div>
+
+            <div class="cert-grid">
+                <!-- Sertifika 1 -->
+                <div class="cert-card">
+                    <div class="cert-img-box" onclick="openModal('talentcup.jpg')">
+                        <img src="talentcup.jpg" alt="Talentcup Sertifikası" onerror="this.src='https://placehold.co/600x400/393E46/FFD369?text=Talentcup+Sertifikasi'">
+                        <div class="cert-img-overlay">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        </div>
+                    </div>
+                    <div class="cert-body">
+                        <div class="cert-header">
+                            <i class="fa-solid fa-trophy"></i>
+                            <div>
+                                <div class="cert-title">Talentcup Finalistliği</div>
+                                <div class="cert-issuer">Talentcup Organizasyonu</div>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.88rem; color: var(--text-muted);">Yarışma sürecinde gösterilen performans neticesinde elde edilen finalistlik derecesi ve 2 adet başarı sertifikası.</p>
+                        <button class="btn-cert-view" onclick="openModal('talentcup.jpg')"><i class="fa-solid fa-expand"></i> Sertifikayı Büyüt</button>
+                    </div>
+                </div>
+
+                <!-- Sertifika 2 -->
+                <div class="cert-card">
+                    <div class="cert-img-box" onclick="openModal('nova-akademi.jpg')">
+                        <img src="nova-akademi.jpg" alt="Nova IT Academy Sertifikası" onerror="this.src='https://placehold.co/600x400/393E46/FFD369?text=Nova+IT+Academy'">
+                        <div class="cert-img-overlay">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        </div>
+                    </div>
+                    <div class="cert-body">
+                        <div class="cert-header">
+                            <i class="fa-solid fa-certificate"></i>
+                            <div>
+                                <div class="cert-title">Nova IT Academy Eğitimi</div>
+                                <div class="cert-issuer">Nova IT Academy</div>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.88rem; color: var(--text-muted);">Yazılım ve kodlama altyapısını güçlendiren akademiyi tamamlama belgesi.</p>
+                        <button class="btn-cert-view" onclick="openModal('nova-akademi.jpg')"><i class="fa-solid fa-expand"></i> Sertifikayı Büyüt</button>
+                    </div>
+                </div>
+
+                <!-- Sertifika 3 -->
+                <div class="cert-card">
+                    <div class="cert-img-box" onclick="openModal('meb-bakanlik.jpg')">
+                        <img src="meb-bakanlik.jpg" alt="MEB Bakanlık Sertifikası" onerror="this.src='https://placehold.co/600x400/393E46/FFD369?text=MEB+Kodlama+Sertifikasi'">
+                        <div class="cert-img-overlay">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        </div>
+                    </div>
+                    <div class="cert-body">
+                        <div class="cert-header">
+                            <i class="fa-solid fa-medal"></i>
+                            <div>
+                                <div class="cert-title">Bakanlık Kodlama Sınavı</div>
+                                <div class="cert-issuer">Milli Eğitim Bakanlığı (13-15 Yaş)</div>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.88rem; color: var(--text-muted);">Resmi yetkinlik sınavında 13-15 yaş grubunda başarıyla elde edilmiş kodlama belgesi.</p>
+                        <button class="btn-cert-view" onclick="openModal('meb-bakanlik.jpg')"><i class="fa-solid fa-expand"></i> Sertifikayı Büyüt</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Referanslar ve Eğitmen Görüşleri -->
+        <section id="references">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-comments"></i> Eğitmen Değerlendirmeleri</h2>
+                <div class="line"></div>
+            </div>
+
+            <!-- Filtre Butonları -->
+            <div class="ref-filter">
+                <button class="ref-filter-btn active" onclick="filterReviews('all', this)">Tüm Görüşler</button>
+                <button class="ref-filter-btn" onclick="filterReviews('ozcan', this)">Özcan OnurArda</button>
+                <button class="ref-filter-btn" onclick="filterReviews('hayirli', this)">Hayırlı Pınar</button>
+                <button class="ref-filter-btn" onclick="filterReviews('sasmaz', this)">Şaşmaz Gökçe</button>
+            </div>
+
+            <!-- İnceleme Kartları Listesi -->
+            <div class="reviews-container" id="reviewsContainer">
+
+                <div class="review-card" data-instructor="ozcan">
+                    <div class="review-header">
+                        <div class="instructor-info">
+                            <i class="fa-solid fa-chalkboard-user" style="color: var(--accent);"></i>
+                            <span class="instructor-name">Özcan OnurArda</span>
+                            <span class="course-tag">Arduino Gadget</span>
+                        </div>
+                        <span class="review-date">03.06.2026</span>
+                    </div>
+                    <div class="review-text">
+                        "Mehmet Fatih, Arduino ile C geliştirme çalışmalarında yazılım bilgilerini kullanabilen öğrencilerimden biri. Ders içerisinde projesini tamamlaması ve verilen çalışmaları uygulayabilmesi gelişimi açısından oldukça olumlu. Kodlama tarafındaki bilgisini Arduino projelerine aktarması güzel bir avantaj."
+                    </div>
+                </div>
+
+                <div class="review-card" data-instructor="ozcan">
+                    <div class="review-header">
+                        <div class="instructor-info">
+                            <i class="fa-solid fa-chalkboard-user" style="color: var(--accent);"></i>
+                            <span class="instructor-name">Özcan OnurArda</span>
+                            <span class="course-tag">Arduino Gadget</span>
+                        </div>
+                        <span class="review-date">27.04.2026</span>
+                    </div>
+                    <div class="review-text">
+                        "Algoritmik düşünme becerisinin yüksek olması önemli bir avantaj. Düzenli çalıştığında eksiklerini hızlı bir şekilde tamamlayacağına inanıyorum."
+                    </div>
+                </div>
+
+                <div class="review-card" data-instructor="ozcan">
+                    <div class="review-header">
+                        <div class="instructor-info">
+                            <i class="fa-solid fa-chalkboard-user" style="color: var(--accent);"></i>
+                            <span class="instructor-name">Özcan OnurArda</span>
+                            <span class="course-tag">BBC Micro:bit</span>
+                        </div>
+                        <span class="review-date">25.02.2026</span>
+                    </div>
+                    <div class="review-text">
+                        "Mehmet Fatih, yazılım alanındaki bilgi ve altyapısını BBC micro:bit çalışmalarına başarıyla yansıtan bir öğrencim. Bu alandaki yetkinliği, ek yazılım projeleri geliştirebilecek seviyede olduğunu göstermektedir."
+                    </div>
+                </div>
+
+                <div class="review-card" data-instructor="ozcan">
+                    <div class="review-header">
+                        <div class="instructor-info">
+                            <i class="fa-solid fa-chalkboard-user" style="color: var(--accent);"></i>
+                            <span class="instructor-name">Özcan OnurArda</span>
+                            <span class="course-tag">BBC Micro:bit</span>
+                        </div>
+                        <span class="review-date">19.01.2026</span>
+                    </div>
+                    <div class="review-text">
+                        "Mehmet Fatih, yazılım alanında algoritma geliştirme konusunda oldukça başarılı bir öğrenci. Konuları anlama ve çözüm üretme becerisi dikkat çekmektedir."
+                    </div>
+                </div>
+
+                <div class="review-card" data-instructor="ozcan">
+                    <div class="review-header">
+                        <div class="instructor-info">
+                            <i class="fa-solid fa-chalkboard-user" style="color: var(--accent);"></i>
+                            <span class="instructor-name">Özcan OnurArda</span>
+                            <span class="course-tag">Python Uygulama - Middle</span>
+                        </div>
+                        <span class="review-date">14.01.2026</span>
+                    </div>
+                    <div class="review-text">
+                        "Yazılım alanında belirgin bir yeteneğe ve sağlam bir altyapıya sahip bir öğrencim. Bu alana daha fazla yoğunlaştığında önemli bir gelişim göstereceğine inanıyorum."
+                    </div>
+                </div>
+
+                <div class="review-card" data-instructor="ozcan">
+                    <div class="review-header">
+                        <div class="instructor-info">
+                            <i class="fa-solid fa-chalkboard-user" style="color: var(--accent);"></i>
+                            <span class="instructor-name">Özcan OnurArda</span>
+                            <span class="course-tag">Python Uygulama - Middle</span>
+                        </div>
+                        <span class="review-date">09.12.2025</span>
+                    </div>
+                    <div class="review-text">
+                        "Yazılım alanında sürekli yeni şeyler deneyen bir öğrenci ve bu özelliği gelişimi için gerçekten çok değerli. Ödevlerini kendi başına yapma çabanı takdir ediyorum."
+                    </div>
+                </div>
+
+                <div class="review-card" data-instructor="ozcan">
+                    <div class="review-header">
+                        <div class="instructor-info">
+                            <i class="fa-solid fa-chalkboard-user" style="color: var(--accent);"></i>
+                            <span class="instructor-name">Özcan OnurArda</span>
+                            <span class="course-tag">LEGO 51515 Robotik</span>
+                        </div>
+                        <span class="review-date">14.11.2025</span>
+                    </div>
+                    <div class="review-text">
+                        "Mehmet Fatih, kodlamada gerçekten yetenekli ve bu alanda üzerine gitmesi onun için büyük avantaj olacaktır. Kendi projelerini geliştirmeye başlaması hem yaratıcılığını hem de becerilerini daha hızlı artıracaktır."
+                    </div>
+                </div>
+
+                <div class="review-card" data-instructor="ozcan">
+                    <div class="review-header">
+                        <div class="instructor-info">
+                            <i class="fa-solid fa-chalkboard-user" style="color: var(--accent);"></i>
+                            <span class="instructor-name">Özcan OnurArda</span>
+                            <span class="course-tag">AR Mobil Uygulama</span>
+                        </div>
+                        <span class="review-date">27.10.2025</span>
+                    </div>
+                    <div class="review-text">
+                        "Derslerde gösterdiği performansla, özellikle de yazılım kısmındaki becerileriyle öne çıkan başarılı bir öğrencimiz. Algoritmik düşünme yeteneği ve kodlamada karşılaştığı sorunlara bulduğu çözümler gerçekten takdire şayan."
+                    </div>
+                </div>
+
+                <div class="review-card" data-instructor="hayirli">
+                    <div class="review-header">
+                        <div class="instructor-info">
+                            <i class="fa-solid fa-chalkboard-user" style="color: var(--accent);"></i>
+                            <span class="instructor-name">Hayırlı Pınar</span>
+                            <span class="course-tag">AR Mobil Uygulama</span>
+                        </div>
+                        <span class="review-date">09.10.2025</span>
+                    </div>
+                    <div class="review-text">
+                        "Mehmet Fatih sessiz bir öğrencim fakat dersteki başarısı onun bu alanda göründüğünden daha fazla bilgili olduğunu gösteriyor."
+                    </div>
+                </div>
+
+                <div class="review-card" data-instructor="hayirli">
+                    <div class="review-header">
+                        <div class="instructor-info">
+                            <i class="fa-solid fa-chalkboard-user" style="color: var(--accent);"></i>
+                            <span class="instructor-name">Hayırlı Pınar</span>
+                            <span class="course-tag">AR Mobil Uygulama</span>
+                        </div>
+                        <span class="review-date">24.09.2025</span>
+                    </div>
+                    <div class="review-text">
+                        "Mehmet, MIT App Inventor ve oyun hazırlama konularına gerçekten ilgili ve teknolojiye karşı meraklı bir öğrenci. Derslere zamanında gelmesi de çok güzel bir alışkanlık."
+                    </div>
+                </div>
+
+                <div class="review-card" data-instructor="sasmaz">
+                    <div class="review-header">
+                        <div class="instructor-info">
+                            <i class="fa-solid fa-chalkboard-user" style="color: var(--accent);"></i>
+                            <span class="instructor-name">Şaşmaz Gökçe</span>
+                            <span class="course-tag">LEGO 51515 Robotik</span>
+                        </div>
+                        <span class="review-date">23.03.2024</span>
+                    </div>
+                    <div class="review-text">
+                        "Dönem içerisinde güzel bir oyun tasarladığı ve yazılım yeteneğini gösterdiği için takdir edilen bir performans sergiledi."
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- GitHub & İletişim -->
+        <section id="contact">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-paper-plane"></i> Projelerim & İletişim</h2>
+                <div class="line"></div>
+            </div>
+
+            <!-- Callout GitHub -->
+            <div class="github-box">
+                <h3><i class="fa-brands fa-github"></i> Kodlarımı ve Projelerimi İnceleyin</h3>
+                <p>Geliştirdiğim açık kaynaklı kod örneklerini, deneysel mantık kurgularımı ve güncel repolarımı doğrudan GitHub profilim üzerinden takip edebilirsiniz.</p>
+                <a href="https://github.com/KOSMO471" target="_blank" class="btn-github">
+                    <i class="fa-brands fa-github"></i> GitHub Profilime Git
+                </a>
+            </div>
+
+            <!-- Sosyal Medya Kartları (Güncel Bilgilerle) -->
+            <div class="contact-grid">
+                <a href="https://github.com/KOSMO471" target="_blank" class="contact-card">
+                    <i class="fa-brands fa-github"></i>
+                    <div class="contact-card-info">
+                        <div>GitHub Profilim</div>
+                        <strong>@KOSMO471</strong>
+                    </div>
+                </a>
+
+                <a href="mailto:mehmet.fatih.yildirimm@gmail.com" class="contact-card">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div class="contact-card-info">
+                        <div>E-Posta Adresim</div>
+                        <strong>mehmet.fatih.yildirimm@gmail.com</strong>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/@kosmo471" target="_blank" class="contact-card">
+                    <i class="fa-brands fa-youtube"></i>
+                    <div class="contact-card-info">
+                        <div>YouTube Kanalım</div>
+                        <strong>kosmo471</strong>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Kapanış Mesajı -->
+            <div class="closing-note">
+                <i class="fa-solid fa-handshake"></i> Yeni projelere, açık kaynak iş birliklerine ve öğrenme fırsatlarına her zaman açığım.
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Modal Görsel Büyütme -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <img class="modal-img" id="imgFull">
+    </div>
+
+    <footer>
+        <p>© 2026 Mehmet Fatih. Tüm hakları saklıdır. Bu site sade, abartısız ve gerçek verilerle kurgulanmıştır.</p>
+    </footer>
+
+    <!-- JavaScript İşlevleri -->
+    <script>
+        function filterReviews(instructor, btn) {
+            const buttons = document.querySelectorAll('.ref-filter-btn');
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const reviews = document.querySelectorAll('.review-card');
+            reviews.forEach(review => {
+                if (instructor === 'all' || review.getAttribute('data-instructor') === instructor) {
+                    review.style.display = 'block';
+                } else {
+                    review.style.display = 'none';
+                }
+            });
+        }
+
+        function openModal(imgSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('imgFull');
+            modal.style.display = 'flex';
+            modalImg.src = imgSrc;
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
