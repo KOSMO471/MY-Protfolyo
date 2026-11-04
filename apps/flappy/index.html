@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101a36">
+  <title>Gökyüzü Postacısı — Flappy Bird</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Gökyüzü Postacısı ana menü"><span class="brand-mark">✦</span><span>GÖKYÜZÜ <b>POSTACISI</b></span></a>
+      <div class="top-note"><span class="live-dot"></span> SONSUZ UÇUŞ</div>
+      <button class="icon-button pause-button" id="pauseButton" aria-label="Menüye dön" title="Menüye dön (Esc)"><span>Ⅱ</span></button>
+    </header>
+
+    <section class="game-wrap" aria-label="Flappy Bird oyunu">
+      <canvas id="game" width="960" height="640" aria-label="Oyun alanı"></canvas>
+      <div class="hud" id="hud" hidden>
+        <div class="score-chip"><span>SKOR</span><strong id="score">0</strong></div>
+        <div class="best-chip">EN İYİ <b id="best">0</b></div>
+      </div>
+      <div class="screen menu-screen" id="menuScreen">
+        <div class="menu-card">
+          <div class="eyebrow"><span>✦</span> BULUTLARIN ÜSTÜNDE BİR MACERA</div>
+          <h1>Gökyüzü<br><em>Postacısı</em></h1>
+          <p class="lead">Kanatlarını çırp, rüzgârı yakala.<br>Bu yolculuğun sonu yok!</p>
+          <div class="menu-actions">
+            <button class="primary-button" id="startButton"><span>▶</span> Oyunu başlat</button>
+            <button class="secondary-button" id="resumeButton" hidden>Ⅱ &nbsp;Devam et</button>
+            <div class="menu-row">
+              <button class="secondary-button" id="costumeButton">✧ &nbsp;Kostümler</button>
+              <button class="secondary-button" id="aboutButton">ⓘ &nbsp;Hakkında</button>
+            </div>
+          </div>
+          <div class="controls-hint"><kbd>SPACE</kbd><span>ya da ekrana dokun</span><span class="hint-arrow">↗</span></div>
+        </div>
+        <div class="menu-decoration deco-star">✦</div><div class="menu-decoration deco-cloud">☁</div>
+      </div>
+      <div class="screen sub-screen" id="costumeScreen" hidden>
+        <div class="sub-card">
+          <button class="back-button" data-back>← Menü</button>
+          <div class="eyebrow">UÇUŞ TARZINI SEÇ</div><h2>Kostümler</h2>
+          <p class="sub-lead">Her uçuşa yeni bir görünüm.</p>
+          <div class="costume-grid" id="costumeGrid"></div>
+          <button class="primary-button wide" id="costumeDone">Uçmaya hazırım <span>→</span></button>
+        </div>
+      </div>
+      <div class="screen sub-screen" id="aboutScreen" hidden>
+        <div class="sub-card about-card">
+          <button class="back-button" data-back>← Menü</button>
+          <div class="eyebrow">BİR DOKUNUŞLA HAVALAN</div><h2>Nasıl oynanır?</h2>
+          <p class="about-copy">Kuşunu havada tutmak için <b>Space</b> tuşuna bas veya telefonda ekrana dokun. Boruların arasından geç, yıldızlarını topla ve kendi rekorunu kır. Bir engele çarptığında uçuş sona erer; yeni bir uçuşla tekrar deneyebilirsin.</p>
+          <div class="credit-box"><span class="credit-icon">✦</span><div><small>GELİŞTİREN</small><b>Mehmet Fatih Yıldırım</b><a href="https://github.com/KOSMO471" target="_blank" rel="noopener noreferrer">github.com/KOSMO471 ↗</a></div></div>
+          <button class="primary-button wide" data-back>Menüye dön <span>→</span></button>
+        </div>
+      </div>
+      <div class="screen gameover-screen" id="gameOverScreen" hidden>
+        <div class="result-card"><div class="result-medal">✦</div><div class="eyebrow">UÇUŞ TAMAMLANDI</div><h2>Güzel uçuş!</h2><div class="result-score"><small>SKORUN</small><strong id="finalScore">0</strong></div><p id="recordMessage">Bir tur daha uçmaya ne dersin?</p><button class="primary-button wide" id="retryButton">↻ &nbsp;Yeniden dene</button><button class="text-button" id="resultMenuButton">Ana menüye dön</button></div>
+      </div>
+    </section>
+    <footer class="footer"><span>RÜZGÂR ARKANDAN ESSİN</span><span>© 2026 &nbsp;·&nbsp; SONSUZ MOD</span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>

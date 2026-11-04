@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kim Kod Milyoneri Olmak İster?</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="quiz-app">
+  <header class="top-area">
+    <h1>KİM KOD MİLYONERİ OLMAK İSTER?</h1>
+    <p>50 Soru, 10 Basamak, 1 Büyük Ödül!</p>
+  </header>
+
+  <section class="game-panel">
+    <div class="left-panel">
+      <div class="question-box">
+        <div class="question-top">
+          <span id="questionNumber">Soru 1 / 50</span>
+          <span id="scoreText">Skor: 0</span>
+        </div>
+
+        <div class="jokers-container">
+          <button class="joker-btn" id="phoneJoker">📞 Telefon</button>
+          <button class="joker-btn" id="halfJoker">½ 50:50</button>
+          <button class="joker-btn" id="doubleJoker">×2 Çift Cevap</button>
+        </div>
+
+        <h2 id="questionText">Soru yükleniyor...</h2>
+
+        <div class="answers" id="answersContainer"></div>
+
+        <div class="bottom-buttons">
+          <button id="nextBtn" disabled>Sonraki Soru</button>
+          <button id="restartBtn">Yeniden Başlat</button>
+        </div>
+
+        <div id="messageBox" class="message-box">Cevabını seç ve devam et.</div>
+      </div>
+    </div>
+
+    <aside class="right-panel">
+      <h3>ÖDÜL BASAMAKLARI</h3>
+      <ul class="money-list" id="moneyList">
+        <li>₺ 1.000</li>
+        <li>₺ 5.000</li>
+        <li>₺ 15.000</li>
+        <li>₺ 50.000</li>
+        <li>₺ 125.000</li>
+        <li>₺ 250.000</li>
+        <li>₺ 500.000</li>
+        <li>₺ 1.000.000</li>
+        <li>₺ 2.500.000</li>
+        <li>₺ 5.000.000</li>
+      </ul>
+    </aside>
+  </section>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
