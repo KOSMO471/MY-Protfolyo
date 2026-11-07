@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mehmet Fatih - Kişisel Portfolyo & CV</title>
+    <!-- Bootstrap 5 CSS (Reklam videosu modalı için) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome İkonları -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -1360,6 +1362,33 @@
 
     </div>
 
+
+    <!-- Reklam Videosu Bootstrap Modal -->
+    <div class="modal fade" id="promoVideoModal" tabindex="-1"
+         aria-labelledby="promoVideoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content" style="background-color: #393E46; border: 1px solid #FFD369;">
+                <div class="modal-header" style="border-bottom: 1px solid rgba(255, 211, 105, 0.25);">
+                    <h5 class="modal-title" id="promoVideoModalLabel" style="color: #FFD369;">
+                        <i class="fa-solid fa-circle-play"></i> Tanıtım Videosu
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white"
+                            data-bs-dismiss="modal" aria-label="Kapat"></button>
+                </div>
+                <div class="modal-body p-2">
+                    <video id="promoVideo" class="w-100" controls autoplay muted playsinline
+                           preload="auto" style="display: block; max-height: 75vh; border-radius: 8px;">
+                        <source src="videomu.mp4" type="video/mp4">
+                        Tarayıcınız video oynatmayı desteklemiyor.
+                    </video>
+                    <small class="d-block text-center mt-2" style="color: #9CA3AF;">
+                        Sesi açmak için video oynatıcısındaki ses simgesine dokunun.
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Modal Görsel Büyütme -->
     <div id="imageModal" class="modal" onclick="closeModal()">
         <span class="modal-close" onclick="closeModal()">&times;</span>
@@ -1399,5 +1428,48 @@
             modal.style.display = 'none';
         }
     </script>
+
+    <!-- Bootstrap 5 JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Sayfa açıldıktan 3 saniye sonra reklamı göster; video bitince modalı kapat -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const promoModalElement = document.getElementById('promoVideoModal');
+            const promoVideo = document.getElementById('promoVideo');
+
+            if (!promoModalElement || !promoVideo || typeof bootstrap === 'undefined') {
+                return;
+            }
+
+            const promoModal = new bootstrap.Modal(promoModalElement);
+
+            // Site açıldıktan 3 saniye sonra reklam penceresini göster.
+            window.setTimeout(function () {
+                promoModal.show();
+
+                // Otomatik oynatma tarayıcı tarafından engellenirse kullanıcı
+                // video üzerindeki oynat düğmesine basarak başlatabilir.
+                const playPromise = promoVideo.play();
+                if (playPromise && typeof playPromise.catch === 'function') {
+                    playPromise.catch(function () {
+                        // Tarayıcı otomatik oynatmayı engelledi; video kontrolleri açık.
+                    });
+                }
+            }, 3000);
+
+            // Reklam videosu tamamlandığında modalı otomatik kapat.
+            promoVideo.addEventListener('ended', function () {
+                promoModal.hide();
+            });
+
+            // Modal kapatıldığında videoyu durdurup başa sar.
+            promoModalElement.addEventListener('hidden.bs.modal', function () {
+                promoVideo.pause();
+                promoVideo.currentTime = 0;
+            });
+        });
+    </script>
+
 </body>
 </html>
