@@ -1,0 +1,23 @@
+# --- İşletim Sistemi Kalıntıları ---
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# --- Editör ve Geliştirme Ortamları ---
+.vscode/
+.idea/
+*.suo
+*.user
+*.cache
+
+# --- Python için (Eğer Python projelerin varsa) ---
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+
+# --- C# / Visual Studio için (Eğer ControlCenter gibi projelerin varsa) ---
+bin/
+obj/
+*.csproj.user
